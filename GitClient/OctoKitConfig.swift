@@ -15,26 +15,26 @@ let defaults = NSUserDefaults()
 typealias Result = ([AnyObject]) -> Void
 
 var token:String {
-    get{
-        var tok = ""
-        if let token = defaults.valueForKey("token") as? String {
-            tok = token
-        }
-      return tok
+get{
+    var tok = ""
+    if let token = defaults.valueForKey("token") as? String {
+        tok = token
     }
+    return tok
+}
 }
 
-var user:User {
-    get{
-         var savedUser:User!
-        if let data = defaults.objectForKey("userSaved") as? NSData {
-            let unarc = NSKeyedUnarchiver(forReadingWithData: data)
-            unarc.setClass(User.self, forClassName: "User")
-            let user = unarc.decodeObjectForKey("root")
-            savedUser = user as! User
-        }
-        return savedUser
+var user:User? {
+get{
+    var savedUser:User?
+    if let data = defaults.objectForKey("userSaved") as? NSData {
+        let unarc = NSKeyedUnarchiver(forReadingWithData: data)
+        unarc.setClass(User.self, forClassName: "User")
+        let user = unarc.decodeObjectForKey("root")
+        savedUser = user as? User
     }
+    return savedUser
+}
 }
 
 let config = TokenConfiguration(token)
@@ -59,32 +59,25 @@ struct NetworkManager {
             case .Success(let repository):
                 completion(repository)
                 break
-
             case .Failure(let error):
                 print(error)
                 break
-                // handle any errors
             }
         }
 
     }
 
     func getStarredRepos(user:User, config: TokenConfiguration, completion: Result) {
-        let name = "GalaevAlexey"
-        print(name)
-           print(config)
+        let name = user.login!
+
         Octokit(config).stars(name) { response in
-            print(response)
             switch response {
             case .Success(let repositories):
-                print(repositories)
-                 completion(repositories)
+                completion(repositories)
                 break
-            // do something with the repositories
             case .Failure(let error):
-                  print(error)
+                print(error)
                 break
-                // handle any errors
             }
         }
     }
@@ -94,12 +87,41 @@ struct NetworkManager {
             switch response {
             case .Success(let user):
                 print(user)
-            break
-            case .Failure(let error):
-                 print(error)
                 break
-                // handle any errors
+            case .Failure(let error):
+                print(error)
+                break
             }
         }
+    }
+
+    func getForks(config:TokenConfiguration, owner:User,repo:Repository, completion:Result) {
+        let owner = owner.login!
+        let repo = repo.name!
+        Octokit(config).forks(owner, repo: repo, completion: { responce in
+            switch responce {
+            case .Success(let repositories):
+                completion(repositories)
+                break
+            case .Failure(let error):
+                print(error)
+                break
+            }
+        })
+    }
+
+    func getCommits(config:TokenConfiguration, owner:User,repo:Repository, completion:Result) {
+        let owner = owner.login!
+        let repo = repo.name!
+        Octokit(config).commits(owner, repo: repo, completion: { responce in
+            switch responce {
+            case .Success(let commits):
+                completion(commits)
+                break
+            case .Failure(let error):
+                print(error)
+                break
+            }
+        })
     }
 }

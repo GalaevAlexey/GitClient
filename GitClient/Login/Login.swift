@@ -76,6 +76,7 @@ struct Login {
                 }
                 
             }
+            
         } catch let error {
             dispatch_async(dispatch_get_main_queue(),{
                 completionHandler(false)

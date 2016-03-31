@@ -36,6 +36,16 @@
 		1D86FEF91CA3A82F00F26F13 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEED1CA3A82F00F26F13 /* Stars.swift */; };
 		1D86FEFA1CA3A82F00F26F13 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEEE1CA3A82F00F26F13 /* Time.swift */; };
 		1D86FEFB1CA3A82F00F26F13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEEF1CA3A82F00F26F13 /* User.swift */; };
+		1DAEDD121CABA285006B4DFD /* Forks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAEDD111CABA285006B4DFD /* Forks.swift */; };
+		1DAF2AEB1CA7C75300022E2E /* RepoDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AEA1CA7C75300022E2E /* RepoDetailsTableViewCell.swift */; };
+		1DAF2AED1CA7DD5C00022E2E /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */; };
+		1DAF2AEE1CA7DD5C00022E2E /* ImageLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DAF2AF01CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */; };
+		1DAF2AF11CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1DAF2AF31CA831C900022E2E /* RepoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */; };
+		1DAF2AF61CA86F6C00022E2E /* RepoConmmitmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */; };
+		1DAF2AF81CA872F100022E2E /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF71CA872F100022E2E /* RepoDetailViewController.swift */; };
+		1DB5F5761CAD5B8D00C690CF /* Commits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5F5751CAD5B8D00C690CF /* Commits.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,6 +56,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				1D10F1BC1CA3E7E9004E549F /* SwiftHTTP.framework in Embed Frameworks */,
+				1DAF2AEE1CA7DD5C00022E2E /* ImageLoader.framework in Embed Frameworks */,
+				1DAF2AF11CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Embed Frameworks */,
 				1D10F1C41CA3EBAF004E549F /* JSONJoy.framework in Embed Frameworks */,
 				1D10F1AF1CA3D75B004E549F /* OAuthSwift.framework in Embed Frameworks */,
 				1D7299CB1CA3AA4500FBD3BE /* RequestKit.framework in Embed Frameworks */,
@@ -84,6 +96,14 @@
 		1D86FEED1CA3A82F00F26F13 /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
 		1D86FEEE1CA3A82F00F26F13 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1D86FEEF1CA3A82F00F26F13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1DAEDD111CABA285006B4DFD /* Forks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forks.swift; sourceTree = "<group>"; };
+		1DAF2AEA1CA7C75300022E2E /* RepoDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageLoader.framework; path = Carthage/Build/iOS/ImageLoader.framework; sourceTree = "<group>"; };
+		1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
+		1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailModel.swift; sourceTree = "<group>"; };
+		1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoConmmitmodel.swift; sourceTree = "<group>"; };
+		1DAF2AF71CA872F100022E2E /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
+		1DB5F5751CAD5B8D00C690CF /* Commits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commits.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +112,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D86FEE01CA3A80500F26F13 /* RequestKit.framework in Frameworks */,
+				1DAF2AED1CA7DD5C00022E2E /* ImageLoader.framework in Frameworks */,
+				1DAF2AF01CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Frameworks */,
 				1D10F1C31CA3EBAF004E549F /* JSONJoy.framework in Frameworks */,
 				1D10F1AB1CA3CBC0004E549F /* OAuthSwift.framework in Frameworks */,
 				1D10F1BA1CA3E7E1004E549F /* SwiftHTTP.framework in Frameworks */,
@@ -113,8 +135,8 @@
 		1D10F1BD1CA3E924004E549F /* Repos */ = {
 			isa = PBXGroup;
 			children = (
-				1D10F1BF1CA3E924004E549F /* ReposViewController.swift */,
-				1D10F1C61CA3F901004E549F /* RepositoryTableViewCell.swift */,
+				1DAF2AFA1CA873F100022E2E /* RepoDetailViewController */,
+				1DAF2AF91CA873DC00022E2E /* RepoViewController */,
 			);
 			path = Repos;
 			sourceTree = "<group>";
@@ -155,6 +177,7 @@
 				1D10F1BD1CA3E924004E549F /* Repos */,
 				1D10F1B41CA3E162004E549F /* Login */,
 				1D10F1C51CA3ECB5004E549F /* Application */,
+				1DAF2AF41CA8461100022E2E /* Model */,
 			);
 			path = GitClient;
 			sourceTree = "<group>";
@@ -162,6 +185,8 @@
 		1D86FEE11CA3A80C00F26F13 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */,
+				1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */,
 				1D10F1C21CA3EBAF004E549F /* JSONJoy.framework */,
 				1D10F1B91CA3E7E1004E549F /* SwiftHTTP.framework */,
 				1D10F1AA1CA3CBC0004E549F /* OAuthSwift.framework */,
@@ -184,12 +209,41 @@
 				1D86FEEA1CA3A82F00F26F13 /* Octokit.swift */,
 				1D86FEEB1CA3A82F00F26F13 /* PublicKey.swift */,
 				1D86FEEC1CA3A82F00F26F13 /* Repositories.swift */,
+				1DAEDD111CABA285006B4DFD /* Forks.swift */,
+				1DB5F5751CAD5B8D00C690CF /* Commits.swift */,
 				1D86FEED1CA3A82F00F26F13 /* Stars.swift */,
 				1D86FEEE1CA3A82F00F26F13 /* Time.swift */,
 				1D86FEEF1CA3A82F00F26F13 /* User.swift */,
 			);
 			name = OctoKit;
 			path = octokit/OctoKit;
+			sourceTree = "<group>";
+		};
+		1DAF2AF41CA8461100022E2E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */,
+				1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1DAF2AF91CA873DC00022E2E /* RepoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1D10F1BF1CA3E924004E549F /* ReposViewController.swift */,
+				1D10F1C61CA3F901004E549F /* RepositoryTableViewCell.swift */,
+			);
+			name = RepoViewController;
+			sourceTree = "<group>";
+		};
+		1DAF2AFA1CA873F100022E2E /* RepoDetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1DAF2AF71CA872F100022E2E /* RepoDetailViewController.swift */,
+				1DAF2AEA1CA7C75300022E2E /* RepoDetailsTableViewCell.swift */,
+			);
+			name = RepoDetailViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,14 +321,19 @@
 			files = (
 				1D10F1B81CA3E162004E549F /* LoginViewController.swift in Sources */,
 				1D86FEF71CA3A82F00F26F13 /* PublicKey.swift in Sources */,
+				1DAF2AF31CA831C900022E2E /* RepoDetailModel.swift in Sources */,
 				1D10F1B71CA3E162004E549F /* Login.swift in Sources */,
 				1D86FEF11CA3A82F00F26F13 /* Follow.swift in Sources */,
+				1DAEDD121CABA285006B4DFD /* Forks.swift in Sources */,
+				1DAF2AF81CA872F100022E2E /* RepoDetailViewController.swift in Sources */,
 				1D86FEF51CA3A82F00F26F13 /* Milestone.swift in Sources */,
+				1DB5F5761CAD5B8D00C690CF /* Commits.swift in Sources */,
 				1D7299CF1CA3B55800FBD3BE /* OctoKitConfig.swift in Sources */,
 				1D5E10721CA3A40F00EAA9E8 /* AppDelegate.swift in Sources */,
 				1D86FEF01CA3A82F00F26F13 /* Configuration.swift in Sources */,
 				1D86FEFB1CA3A82F00F26F13 /* User.swift in Sources */,
 				1D10F1C11CA3E924004E549F /* ReposViewController.swift in Sources */,
+				1DAF2AF61CA86F6C00022E2E /* RepoConmmitmodel.swift in Sources */,
 				1D86FEFA1CA3A82F00F26F13 /* Time.swift in Sources */,
 				1D86FEF61CA3A82F00F26F13 /* Octokit.swift in Sources */,
 				1D86FEF91CA3A82F00F26F13 /* Stars.swift in Sources */,
@@ -282,6 +341,7 @@
 				1D10F1C71CA3F901004E549F /* RepositoryTableViewCell.swift in Sources */,
 				1D86FEF41CA3A82F00F26F13 /* Label.swift in Sources */,
 				1D86FEF31CA3A82F00F26F13 /* Issue.swift in Sources */,
+				1DAF2AEB1CA7C75300022E2E /* RepoDetailsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

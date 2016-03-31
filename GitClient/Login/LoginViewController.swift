@@ -9,9 +9,9 @@
 import UIKit
 
 class LoginViewController : UIViewController, UITextFieldDelegate {
+    
     @IBOutlet var usernameField : UITextField!
     @IBOutlet var passwordField : UITextField!
-
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -40,7 +40,6 @@ class LoginViewController : UIViewController, UITextFieldDelegate {
                 let alert = UIAlertView(title: "Failed to Login.", message: "Invalid Username or Password", delegate: self, cancelButtonTitle: "OK")
                 alert.show()
             }
-
         })
     }
     

@@ -129,7 +129,7 @@ enum OAuthRouter: Router {
             return request(URLString, parameters: params)
         case .AccessToken(let config, _):
             let URLString = config.webEndpoint.stringByAppendingURLPath(path)
-            
+            print(URLString)
             return request(URLString, parameters: params)
         }
     }
