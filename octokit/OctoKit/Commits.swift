@@ -39,9 +39,6 @@ import RequestKit
         if let date = json["commit"]?["author"]?!["date"] as? String {
             self.date = date
         }
-
-
-      //  if let author = json["commit"]["author"]["name"] as?
     }
 }
 
@@ -50,10 +47,12 @@ import RequestKit
 public extension Octokit {
 
     public func commits(owner: String? = nil,
-                      repo: String? = nil,
-                      completion: (response: Response<[Commit]>) -> Void) {
+                        repo: String? = nil,
+                        page: String? = "1",
+                        perPage: String? = "15",
+                        completion: (response: Response<[Commit]>) -> Void) {
 
-        let router = CommitsRouter.ReadCommits(configuration,owner!,repo!)
+        let router = CommitsRouter.ReadCommits(configuration, owner!, repo!, page!, perPage!)
 
         router.loadJSON([[String: AnyObject]].self) { json, error in
 
@@ -62,22 +61,9 @@ public extension Octokit {
             }
 
             if let json = json {
-                let commits = json.map{Commit(json: $0)}
+                
+                let commits = json.map{Commit(json:$0)}
                 completion(response: Response.Success(commits))
-            }
-        }
-    }
-
-    public func fork(owner: String, name: String, completion: (response: Response<Commit>) -> Void) {
-        let router = ForksRouter.ReadForks(configuration, owner, name)
-        router.loadJSON([String: AnyObject].self) { json, error in
-            if let error = error {
-                completion(response: Response.Failure(error))
-            } else {
-                if let json = json {
-                    let commit = Commit(json: json)
-                    completion(response: Response.Success(commit))
-                }
             }
         }
     }
@@ -87,11 +73,11 @@ public extension Octokit {
 
 enum CommitsRouter: Router {
 
-    case ReadCommits(Configuration, String, String)
+    case ReadCommits(Configuration, String, String, String, String)
 
     var configuration: Configuration {
         switch self {
-        case .ReadCommits(let config, _, _): return config
+        case .ReadCommits(let config, _, _, _, _): return config
         }
     }
 
@@ -105,14 +91,16 @@ enum CommitsRouter: Router {
 
     var params: [String: String] {
         switch self {
-        case .ReadCommits:
-            return [:]
+        case .ReadCommits(_, _, _, let page, let perPage):
+            print(["per_page": perPage, "page": page])
+            return ["per_page": perPage, "page": page]
         }
     }
 
     var path: String {
         switch self {
-        case ReadCommits(_, let owner, let rep):
+        case ReadCommits(_, let owner, let rep,_ ,_ ):
+            print("/repos/\(owner)/\(rep)/commits")
             return "/repos/\(owner)/\(rep)/commits"
         }
     }

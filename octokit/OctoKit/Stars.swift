@@ -13,8 +13,6 @@ public extension Octokit {
         let router = StarsRouter.ReadStars(name, configuration)
         print(router)
         router.loadJSON([[String: AnyObject]].self) { json, error in
-            print(json)
-            print(error)
             if let error = error {
                 completion(response: Response.Failure(error))
             } else {

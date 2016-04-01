@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NVActivityIndicatorView
 
 let manager = NetworkManager()
 
@@ -24,36 +25,30 @@ get{
 }
 }
 
-var user:User? {
-get{
+ struct CurrentUser {
+    var loadedUser:User?
     var savedUser:User?
-    if let data = defaults.objectForKey("userSaved") as? NSData {
-        let unarc = NSKeyedUnarchiver(forReadingWithData: data)
-        unarc.setClass(User.self, forClassName: "User")
-        let user = unarc.decodeObjectForKey("root")
-        savedUser = user as? User
-    }
-    return savedUser
-}
 }
 
-let config = TokenConfiguration(token)
+
+var config = {
+    return TokenConfiguration(token)
+}()
 
 struct NetworkManager {
 
-    func loadCurrentUser(config: TokenConfiguration) {
+    func loadCurrentUser(completion:Result) {
         Octokit(config).me() { response in
             switch response {
             case .Success(let user):
-                defaults.setObject(NSKeyedArchiver.archivedDataWithRootObject(user), forKey: "userSaved")
-                defaults.synchronize()
+                completion([user])
             case .Failure(let error):
                 print(error)
             }
         }
     }
 
-    func getRepos(config: TokenConfiguration, completion: Result) {
+    func getRepos(completion: Result) {
         Octokit(config).repositories() { response in
             switch response {
             case .Success(let repository):
@@ -64,10 +59,9 @@ struct NetworkManager {
                 break
             }
         }
-
     }
 
-    func getStarredRepos(user:User, config: TokenConfiguration, completion: Result) {
+    func getStarredRepos(user:User, completion: Result) {
         let name = user.login!
 
         Octokit(config).stars(name) { response in
@@ -82,11 +76,13 @@ struct NetworkManager {
         }
     }
 
-    func getUser(config: TokenConfiguration) {
-        Octokit(config).me() { response in
+    func getUser(user:User,completion:Result) {
+        let owner = user.login!
+        Octokit(config).user(owner){ response in
             switch response {
             case .Success(let user):
                 print(user)
+                completion([user])
                 break
             case .Failure(let error):
                 print(error)
@@ -95,7 +91,7 @@ struct NetworkManager {
         }
     }
 
-    func getForks(config:TokenConfiguration, owner:User,repo:Repository, completion:Result) {
+    func getForks(owner:User,repo:Repository, completion:Result) {
         let owner = owner.login!
         let repo = repo.name!
         Octokit(config).forks(owner, repo: repo, completion: { responce in
@@ -110,10 +106,25 @@ struct NetworkManager {
         })
     }
 
-    func getCommits(config:TokenConfiguration, owner:User,repo:Repository, completion:Result) {
+    func getSubscribers(owner:User,repo:Repository, completion:Result) {
         let owner = owner.login!
         let repo = repo.name!
-        Octokit(config).commits(owner, repo: repo, completion: { responce in
+        Octokit(config).subscriber(owner, repo: repo, completion: { responce in
+            switch responce {
+            case .Success(let repositories):
+                completion(repositories)
+                break
+            case .Failure(let error):
+                print(error)
+                break
+            }
+        })
+    }
+
+    func getCommits(owner:User,repo:Repository, page:String, completion:Result) {
+        let owner = owner.login!
+        let repo = repo.name!
+        Octokit(config).commits(owner, repo: repo, page:page, completion: { responce in
             switch responce {
             case .Success(let commits):
                 completion(commits)

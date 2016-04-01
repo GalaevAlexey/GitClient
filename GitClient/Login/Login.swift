@@ -1,4 +1,9 @@
 
+//  GitClient
+//
+//  Created by Alexey Galaev on 24/03/16.
+//  Copyright © 2016 Alexey Galaev. All rights reserved.
+//
 
 import SwiftHTTP
 import JSONJoy
@@ -63,9 +68,11 @@ struct Login {
                 let auth = Authorization(JSONDecoder(response.data))
                 if let token = auth.token {
                     print("token: \(token)")
-                    manager.loadCurrentUser(config)
                     defaults.setObject(token, forKey: "token")
                     defaults.synchronize()
+                    manager.loadCurrentUser(){ completion in
+                        currentUser.savedUser = completion.first! as? User
+                    }
                     dispatch_async(dispatch_get_main_queue(),{
                         completionHandler(true)
                     })

@@ -1,9 +1,9 @@
 //
 //  ReposViewController.swift
-//  Github
+//  GitClient
 //
-//  Created by Austin Cherry on 9/28/14.
-//  Copyright (c) 2014 Vluxe. All rights reserved.
+//  Created by Alexey Galaev on 24/03/16.
+//  Copyright © 2016 Alexey Galaev. All rights reserved.
 //
 
 import UIKit
@@ -14,28 +14,28 @@ enum Repositories:Int {
     Starred
 }
 
+let activity:NVActivityIndicatorView  = {
+    let screen = UIScreen.mainScreen().bounds
+    let size = CGSize(width: 100, height: 100)
+    let center = CGPointMake(CGRectGetMidX(screen), CGRectGetMidY(screen))
+    let frame = CGRect(origin: CGPointMake(CGRectGetMidX(screen), CGRectGetMidY(screen)), size: size)
+    let a = NVActivityIndicatorView(frame: frame,
+                                    color: UIColor.greenColor(),
+                                    size: size)
+    a.hidesWhenStopped = true
+    a.center = center
+    return a
+}()
+
+
 class ReposViewController: UITableViewController, UITabBarDelegate{
 
-    var repos:[RepoDetailModel] = []
     var tab:Int = 0
-    lazy var activity:NVActivityIndicatorView  = {
-        let screen = UIScreen.mainScreen().bounds
-        let size = CGSize(width: 100, height: 100)
-        let center = CGPointMake(CGRectGetMidX(screen), CGRectGetMidY(screen))
-        let frame = CGRect(origin: CGPointMake(CGRectGetMidX(screen), CGRectGetMidY(screen)), size: size)
-        let a = NVActivityIndicatorView(frame: frame,
-                                        type: NVActivityIndicatorType.BallGridPulse,
-                                        color: UIColor.greenColor(),
-                                        size: size)
-        a.hidesWhenStopped = true
-        a.center = center
-        return a
-    }()
 
     var repositories:[Repository] = [] {
         didSet {
+            activity.stopAnimation()
             if repositories.count > 0 {
-                activity.stopAnimation()
                 self.tableView.reloadData()
                 switch tab {
                 case Repositories.Autorised.hashValue:
@@ -51,46 +51,56 @@ class ReposViewController: UITableViewController, UITabBarDelegate{
         }
     }
 
+    var isDataLoading = false {
+        didSet {
+            if isDataLoading {
+                activity.startAnimation()
+            } else {
+                activity.stopAnimation()
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setActivity()
-        manager.loadCurrentUser(config)
     }
 
     func setActivity(){
         self.tabBarController?.view.addSubview(activity)
-        activity.startAnimation()
         self.navigationItem.title = "Loading Data From Git"
     }
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         tab = self.tabBarController!.selectedIndex
-        //repositories = []
         loadData()
     }
 
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(true)
-        activity.stopAnimation()
     }
 
     func loadData(){
-
+        isDataLoading = true
         switch tab {
         case Repositories.Autorised.hashValue:
-            manager.getRepos(config) { completion in
-                if let repos = completion as? [Repository] {
-                    self.repositories = repos
+            manager.getRepos() {[unowned self] completion in
+                dispatch_async(dispatch_get_main_queue()) {[unowned self] in
+                    if let repos = completion as? [Repository] {
+                        self.repositories = repos
+                        self.isDataLoading = false
+                    }
                 }
             }
 
             break
         case Repositories.Starred.hashValue:
-            if let loadedUser = user {
-                manager.getStarredRepos(loadedUser,config: config) { completion in
+            manager.getStarredRepos(currentUser.savedUser!) { [unowned self] completion in
+                dispatch_async(dispatch_get_main_queue()) {[unowned self] in
                     if let repos = completion as? [Repository] {
                         self.repositories = repos
+                        self.isDataLoading = false
                     }
                 }
             }
@@ -118,20 +128,14 @@ class ReposViewController: UITableViewController, UITabBarDelegate{
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+
         let vc = segue.destinationViewController as!
         RepoDetailViewController
+        vc.hidesBottomBarWhenPushed = true
         if let selectedCell = sender as? RepositoryTableViewCell {
             let index = self.tableView.indexPathForCell(selectedCell)
+            print([repositories[index!.row]])
             vc.repository = [repositories[index!.row]]
         }
-        //Create fake repos
-        for i in 0 ..< repositories.count {
-            var  unit = RepoDetailModel()
-            unit.forks = i
-            unit.watches = arc4random().hashValue
-            repos.append(unit)
-        }
-        
-        vc.repo = [repos.first!]
     }
 }

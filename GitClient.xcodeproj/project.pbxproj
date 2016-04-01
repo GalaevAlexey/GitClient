@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D03C4FB1CAE551A0039770A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D03C4FA1CAE551A0039770A /* TabBarVC.swift */; };
+		1D03C4FD1CAEC51D0039770A /* icon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1D03C4FC1CAEC51D0039770A /* icon.jpg */; };
 		1D10F1AB1CA3CBC0004E549F /* OAuthSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D10F1AA1CA3CBC0004E549F /* OAuthSwift.framework */; };
 		1D10F1AF1CA3D75B004E549F /* OAuthSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1D10F1AA1CA3CBC0004E549F /* OAuthSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1D10F1B11CA3E13D004E549F /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D10F1B01CA3E13D004E549F /* Storyboard.storyboard */; };
@@ -36,14 +38,15 @@
 		1D86FEF91CA3A82F00F26F13 /* Stars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEED1CA3A82F00F26F13 /* Stars.swift */; };
 		1D86FEFA1CA3A82F00F26F13 /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEEE1CA3A82F00F26F13 /* Time.swift */; };
 		1D86FEFB1CA3A82F00F26F13 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D86FEEF1CA3A82F00F26F13 /* User.swift */; };
+		1DA6C0351CADD64300C70235 /* Subscribers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C0341CADD64300C70235 /* Subscribers.swift */; };
+		1DA6C0381CAE3A2A00C70235 /* ZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C0371CAE3A2A00C70235 /* ZoomTransition.swift */; };
+		1DA6C03A1CAE3D6800C70235 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA6C0391CAE3D6800C70235 /* ImageViewController.swift */; };
 		1DAEDD121CABA285006B4DFD /* Forks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAEDD111CABA285006B4DFD /* Forks.swift */; };
 		1DAF2AEB1CA7C75300022E2E /* RepoDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AEA1CA7C75300022E2E /* RepoDetailsTableViewCell.swift */; };
 		1DAF2AED1CA7DD5C00022E2E /* ImageLoader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */; };
 		1DAF2AEE1CA7DD5C00022E2E /* ImageLoader.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1DAF2AF01CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */; };
 		1DAF2AF11CA7DD6B00022E2E /* NVActivityIndicatorView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		1DAF2AF31CA831C900022E2E /* RepoDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */; };
-		1DAF2AF61CA86F6C00022E2E /* RepoConmmitmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */; };
 		1DAF2AF81CA872F100022E2E /* RepoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DAF2AF71CA872F100022E2E /* RepoDetailViewController.swift */; };
 		1DB5F5761CAD5B8D00C690CF /* Commits.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DB5F5751CAD5B8D00C690CF /* Commits.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D03C4FA1CAE551A0039770A /* TabBarVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		1D03C4FC1CAEC51D0039770A /* icon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = icon.jpg; path = ../../../../Volumes/elevator/HomeSweetHome/Downloads/icon.jpg; sourceTree = "<group>"; };
 		1D10F1AA1CA3CBC0004E549F /* OAuthSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OAuthSwift.framework; path = Carthage/Build/iOS/OAuthSwift.framework; sourceTree = "<group>"; };
 		1D10F1B01CA3E13D004E549F /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		1D10F1B51CA3E162004E549F /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -96,12 +101,13 @@
 		1D86FEED1CA3A82F00F26F13 /* Stars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stars.swift; sourceTree = "<group>"; };
 		1D86FEEE1CA3A82F00F26F13 /* Time.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		1D86FEEF1CA3A82F00F26F13 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		1DA6C0341CADD64300C70235 /* Subscribers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subscribers.swift; sourceTree = "<group>"; };
+		1DA6C0371CAE3A2A00C70235 /* ZoomTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransition.swift; sourceTree = "<group>"; };
+		1DA6C0391CAE3D6800C70235 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewController.swift; path = "../../../../Volumes/elevator/HomeSweetHome/Downloads/ZoomTransition-master/ZoomTransition/ImageViewController.swift"; sourceTree = "<group>"; };
 		1DAEDD111CABA285006B4DFD /* Forks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forks.swift; sourceTree = "<group>"; };
 		1DAF2AEA1CA7C75300022E2E /* RepoDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		1DAF2AEC1CA7DD5C00022E2E /* ImageLoader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageLoader.framework; path = Carthage/Build/iOS/ImageLoader.framework; sourceTree = "<group>"; };
 		1DAF2AEF1CA7DD6B00022E2E /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NVActivityIndicatorView.framework; path = Carthage/Build/iOS/NVActivityIndicatorView.framework; sourceTree = "<group>"; };
-		1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailModel.swift; sourceTree = "<group>"; };
-		1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoConmmitmodel.swift; sourceTree = "<group>"; };
 		1DAF2AF71CA872F100022E2E /* RepoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoDetailViewController.swift; sourceTree = "<group>"; };
 		1DB5F5751CAD5B8D00C690CF /* Commits.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Commits.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,6 +152,7 @@
 			children = (
 				1D7299CE1CA3B55800FBD3BE /* OctoKitConfig.swift */,
 				1D5E107A1CA3A40F00EAA9E8 /* Assets.xcassets */,
+				1D03C4FC1CAEC51D0039770A /* icon.jpg */,
 				1D5E107C1CA3A40F00EAA9E8 /* LaunchScreen.storyboard */,
 				1D5E107F1CA3A40F00EAA9E8 /* Info.plist */,
 			);
@@ -155,6 +162,7 @@
 		1D5E10651CA3A40F00EAA9E8 = {
 			isa = PBXGroup;
 			children = (
+				1DA6C0361CAE3A2A00C70235 /* ZoomTransition */,
 				1D5E10701CA3A40F00EAA9E8 /* GitClient */,
 				1D86FEE11CA3A80C00F26F13 /* Frameworks */,
 				1D5E106F1CA3A40F00EAA9E8 /* Products */,
@@ -172,6 +180,7 @@
 		1D5E10701CA3A40F00EAA9E8 /* GitClient */ = {
 			isa = PBXGroup;
 			children = (
+				1D03C4FA1CAE551A0039770A /* TabBarVC.swift */,
 				1D5E10711CA3A40F00EAA9E8 /* AppDelegate.swift */,
 				1D10F1B01CA3E13D004E549F /* Storyboard.storyboard */,
 				1D10F1BD1CA3E924004E549F /* Repos */,
@@ -190,7 +199,6 @@
 				1D10F1C21CA3EBAF004E549F /* JSONJoy.framework */,
 				1D10F1B91CA3E7E1004E549F /* SwiftHTTP.framework */,
 				1D10F1AA1CA3CBC0004E549F /* OAuthSwift.framework */,
-				1D86FEE21CA3A82F00F26F13 /* OctoKit */,
 				1D86FEDF1CA3A80500F26F13 /* RequestKit.framework */,
 			);
 			name = Frameworks;
@@ -210,20 +218,29 @@
 				1D86FEEB1CA3A82F00F26F13 /* PublicKey.swift */,
 				1D86FEEC1CA3A82F00F26F13 /* Repositories.swift */,
 				1DAEDD111CABA285006B4DFD /* Forks.swift */,
+				1DA6C0341CADD64300C70235 /* Subscribers.swift */,
 				1DB5F5751CAD5B8D00C690CF /* Commits.swift */,
 				1D86FEED1CA3A82F00F26F13 /* Stars.swift */,
 				1D86FEEE1CA3A82F00F26F13 /* Time.swift */,
 				1D86FEEF1CA3A82F00F26F13 /* User.swift */,
 			);
 			name = OctoKit;
-			path = octokit/OctoKit;
+			path = ../octokit/OctoKit;
+			sourceTree = "<group>";
+		};
+		1DA6C0361CAE3A2A00C70235 /* ZoomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				1DA6C0391CAE3D6800C70235 /* ImageViewController.swift */,
+				1DA6C0371CAE3A2A00C70235 /* ZoomTransition.swift */,
+			);
+			path = ZoomTransition;
 			sourceTree = "<group>";
 		};
 		1DAF2AF41CA8461100022E2E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1DAF2AF21CA831C900022E2E /* RepoDetailModel.swift */,
-				1DAF2AF51CA86F6C00022E2E /* RepoConmmitmodel.swift */,
+				1D86FEE21CA3A82F00F26F13 /* OctoKit */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,6 +296,7 @@
 				TargetAttributes = {
 					1D5E106D1CA3A40F00EAA9E8 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = DR9YEJ8YRD;
 					};
 				};
 			};
@@ -309,6 +327,7 @@
 				1D10F1B11CA3E13D004E549F /* Storyboard.storyboard in Resources */,
 				1D5E107E1CA3A40F00EAA9E8 /* LaunchScreen.storyboard in Resources */,
 				1D5E107B1CA3A40F00EAA9E8 /* Assets.xcassets in Resources */,
+				1D03C4FD1CAEC51D0039770A /* icon.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,10 +340,11 @@
 			files = (
 				1D10F1B81CA3E162004E549F /* LoginViewController.swift in Sources */,
 				1D86FEF71CA3A82F00F26F13 /* PublicKey.swift in Sources */,
-				1DAF2AF31CA831C900022E2E /* RepoDetailModel.swift in Sources */,
 				1D10F1B71CA3E162004E549F /* Login.swift in Sources */,
+				1D03C4FB1CAE551A0039770A /* TabBarVC.swift in Sources */,
 				1D86FEF11CA3A82F00F26F13 /* Follow.swift in Sources */,
 				1DAEDD121CABA285006B4DFD /* Forks.swift in Sources */,
+				1DA6C03A1CAE3D6800C70235 /* ImageViewController.swift in Sources */,
 				1DAF2AF81CA872F100022E2E /* RepoDetailViewController.swift in Sources */,
 				1D86FEF51CA3A82F00F26F13 /* Milestone.swift in Sources */,
 				1DB5F5761CAD5B8D00C690CF /* Commits.swift in Sources */,
@@ -333,11 +353,12 @@
 				1D86FEF01CA3A82F00F26F13 /* Configuration.swift in Sources */,
 				1D86FEFB1CA3A82F00F26F13 /* User.swift in Sources */,
 				1D10F1C11CA3E924004E549F /* ReposViewController.swift in Sources */,
-				1DAF2AF61CA86F6C00022E2E /* RepoConmmitmodel.swift in Sources */,
 				1D86FEFA1CA3A82F00F26F13 /* Time.swift in Sources */,
 				1D86FEF61CA3A82F00F26F13 /* Octokit.swift in Sources */,
 				1D86FEF91CA3A82F00F26F13 /* Stars.swift in Sources */,
+				1DA6C0381CAE3A2A00C70235 /* ZoomTransition.swift in Sources */,
 				1D86FEF81CA3A82F00F26F13 /* Repositories.swift in Sources */,
+				1DA6C0351CADD64300C70235 /* Subscribers.swift in Sources */,
 				1D10F1C71CA3F901004E549F /* RepositoryTableViewCell.swift in Sources */,
 				1D86FEF41CA3A82F00F26F13 /* Label.swift in Sources */,
 				1D86FEF31CA3A82F00F26F13 /* Issue.swift in Sources */,
@@ -448,6 +469,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -458,6 +481,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexG.GitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -465,6 +489,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,6 +501,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = alexG.GitClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

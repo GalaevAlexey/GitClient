@@ -1,12 +1,14 @@
 //
 //  LoginViewController.swift
-//  Github
+//  GitClient
 //
-//  Created by Austin Cherry on 6/3/14.
-//  Copyright (c) 2014 Vluxe. All rights reserved.
+//  Created by Alexey Galaev on 24/03/16.
+//  Copyright © 2016 Alexey Galaev. All rights reserved.
 //
 
 import UIKit
+
+var currentUser = CurrentUser()
 
 class LoginViewController : UIViewController, UITextFieldDelegate {
     
